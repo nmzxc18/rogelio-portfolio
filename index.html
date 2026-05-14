@@ -44,8 +44,8 @@ content:'';
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at top left, rgba(212,175,55,.14), transparent 30%),
-radial-gradient(circle at bottom right, rgba(255,255,255,.05), transparent 30%);
+radial-gradient(circle at top left, rgba(212,175,55,.12), transparent 30%),
+radial-gradient(circle at bottom right, rgba(255,255,255,.04), transparent 30%);
 z-index:-1;
 }
 
@@ -54,12 +54,12 @@ position:sticky;
 top:0;
 z-index:999;
 backdrop-filter:blur(16px);
-background:rgba(7,17,31,.75);
+background:rgba(7,17,31,.78);
 border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-container{
-max-width:1300px;
+max-width:1350px;
 margin:auto;
 padding:18px 24px;
 display:flex;
@@ -68,7 +68,7 @@ align-items:center;
 }
 
 .logo{
-font-size:24px;
+font-size:26px;
 font-weight:800;
 color:#d4af37;
 letter-spacing:1px;
@@ -76,16 +76,16 @@ letter-spacing:1px;
 
 .logo span{
 display:block;
-font-size:12px;
+font-size:11px;
 letter-spacing:3px;
-font-weight:500;
 color:#fff;
-margin-top:3px;
+margin-top:4px;
+font-weight:500;
 }
 
 .nav-links{
 display:flex;
-gap:28px;
+gap:30px;
 }
 
 .nav-links a{
@@ -93,6 +93,22 @@ text-decoration:none;
 color:#ddd;
 font-weight:500;
 transition:.3s;
+position:relative;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#d4af37;
+transition:.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
 }
 
 .nav-links a:hover{
@@ -100,26 +116,32 @@ color:#d4af37;
 }
 
 .hero{
-max-width:1300px;
+max-width:1350px;
 margin:auto;
-padding:80px 24px;
+padding:90px 24px;
 display:grid;
 grid-template-columns:520px 1fr;
-gap:80px;
+gap:90px;
 align-items:center;
 min-height:100vh;
 }
 
 .hero-image{
 position:relative;
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
 }
 
 .hero-image::before{
 content:'';
 position:absolute;
-width:420px;
-height:420px;
-background:rgba(212,175,55,.15);
+width:430px;
+height:430px;
+background:rgba(212,175,55,.14);
 filter:blur(100px);
 border-radius:50%;
 top:50%;
@@ -133,26 +155,23 @@ border-radius:36px;
 position:relative;
 z-index:2;
 border:1px solid rgba(255,255,255,.08);
-box-shadow:0 30px 70px rgba(0,0,0,.55);
-}
-
-.hero-content{
-position:relative;
+box-shadow:0 35px 80px rgba(0,0,0,.55);
 }
 
 .badge{
 display:inline-block;
 padding:12px 18px;
 border-radius:999px;
-border:1px solid rgba(212,175,55,.4);
 background:rgba(212,175,55,.08);
+border:1px solid rgba(212,175,55,.3);
 color:#f7d97b;
 font-size:14px;
 margin-bottom:28px;
+backdrop-filter:blur(12px);
 }
 
 .hero h1{
-font-size:clamp(60px,8vw,110px);
+font-size:clamp(60px,8vw,115px);
 line-height:.92;
 margin-bottom:18px;
 font-weight:800;
@@ -165,23 +184,23 @@ color:#d4af37;
 .hero h2{
 font-size:30px;
 font-weight:600;
-margin-bottom:26px;
-color:#f0f0f0;
+margin-bottom:24px;
+color:#f2f2f2;
 }
 
 .hero p{
 font-size:18px;
 line-height:1.9;
-color:#cfcfcf;
+color:#d0d0d0;
 max-width:720px;
-margin-bottom:36px;
+margin-bottom:40px;
 }
 
 .buttons{
 display:flex;
 flex-wrap:wrap;
 gap:18px;
-margin-bottom:50px;
+margin-bottom:55px;
 }
 
 .btn{
@@ -189,7 +208,7 @@ padding:16px 30px;
 border-radius:18px;
 text-decoration:none;
 font-weight:700;
-transition:.3s;
+transition:.35s;
 display:inline-flex;
 align-items:center;
 gap:10px;
@@ -198,85 +217,141 @@ gap:10px;
 .btn-primary{
 background:linear-gradient(135deg,#d4af37,#f8db84);
 color:#111;
-box-shadow:0 12px 35px rgba(212,175,55,.25);
+box-shadow:0 12px 35px rgba(212,175,55,.24);
 }
 
 .btn-primary:hover{
 transform:translateY(-4px);
+box-shadow:0 20px 45px rgba(212,175,55,.34);
 }
 
 .btn-secondary{
-border:1px solid rgba(255,255,255,.12);
 background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.12);
 color:white;
 }
 
 .btn-secondary:hover{
 border-color:#d4af37;
 color:#d4af37;
+transform:translateY(-4px);
 }
 
-.metrics{
+.executive-stats{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:18px;
 }
 
-.metric{
-padding:22px;
-border-radius:22px;
+.stat{
+padding:24px;
+border-radius:24px;
 background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.06);
-backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+transition:.35s;
 }
 
-.metric h3{
-font-size:32px;
+.stat:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.4);
+}
+
+.stat h3{
+font-size:34px;
 margin-bottom:8px;
 color:#d4af37;
 }
 
-.metric p{
+.stat p{
 font-size:14px;
-margin:0;
 line-height:1.6;
+margin:0;
 }
 
 section{
-max-width:1300px;
+max-width:1350px;
 margin:auto;
-padding:110px 24px;
+padding:120px 24px;
 }
 
 .section-title{
-font-size:46px;
-margin-bottom:55px;
+font-size:52px;
+margin-bottom:60px;
 font-weight:800;
 }
 
 .about-grid{
 display:grid;
 grid-template-columns:1.2fr .8fr;
-gap:28px;
+gap:30px;
 }
 
 .glass{
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
 backdrop-filter:blur(14px);
-border-radius:30px;
-padding:38px;
+border-radius:32px;
+padding:42px;
+transition:.35s;
+}
+
+.glass:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.35);
 }
 
 .glass h3{
-font-size:26px;
+font-size:28px;
 margin-bottom:18px;
-color:#f3d578;
+color:#f4d67b;
 }
 
 .glass p{
 line-height:1.9;
-color:#d4d4d4;
+color:#d5d5d5;
+}
+
+.specialization-table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+.specialization-table tr{
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.specialization-table td{
+padding:18px 0;
+color:#d5d5d5;
+}
+
+.specialization-table td:first-child{
+font-weight:700;
+color:#f4d67b;
+width:35%;
+}
+
+.logo-strip{
+display:flex;
+flex-wrap:wrap;
+gap:18px;
+margin-top:45px;
+}
+
+.logo-card{
+padding:18px 24px;
+border-radius:18px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+font-weight:600;
+transition:.35s;
+}
+
+.logo-card:hover{
+border-color:#d4af37;
+transform:translateY(-4px);
 }
 
 .expertise{
@@ -286,58 +361,66 @@ gap:16px;
 }
 
 .expertise span{
-padding:14px 22px;
+padding:15px 24px;
 border-radius:999px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
 font-weight:600;
-transition:.3s;
+transition:.35s;
 }
 
 .expertise span:hover{
+transform:translateY(-4px);
 border-color:#d4af37;
-transform:translateY(-3px);
+color:#f4d67b;
 }
 
 .timeline{
 position:relative;
+padding-left:45px;
 margin-top:30px;
-padding-left:40px;
 }
 
 .timeline::before{
 content:'';
 position:absolute;
-left:8px;
+left:10px;
 top:0;
 width:2px;
 height:100%;
-background:rgba(212,175,55,.5);
+background:linear-gradient(to bottom,#d4af37,transparent);
 }
 
 .timeline-item{
 position:relative;
 margin-bottom:45px;
-padding:30px;
+padding:34px;
+border-radius:28px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
-border-radius:26px;
+backdrop-filter:blur(12px);
+transition:.35s;
+}
+
+.timeline-item:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.35);
 }
 
 .timeline-item::before{
 content:'';
 position:absolute;
-left:-42px;
-top:40px;
+left:-43px;
+top:42px;
 width:18px;
 height:18px;
 background:#d4af37;
 border-radius:50%;
-box-shadow:0 0 20px rgba(212,175,55,.6);
+box-shadow:0 0 25px rgba(212,175,55,.6);
 }
 
 .timeline-item h3{
-font-size:28px;
+font-size:30px;
 margin-bottom:8px;
 }
 
@@ -348,92 +431,186 @@ margin-bottom:18px;
 }
 
 .timeline-item ul{
-padding-left:18px;
-color:#d8d8d8;
+padding-left:20px;
 line-height:1.9;
+color:#d7d7d7;
+}
+
+.timeline-item li{
+margin-bottom:10px;
+}
+
+.achievement-box{
+margin-top:28px;
+padding:24px;
+border-radius:20px;
+background:rgba(212,175,55,.06);
+border:1px solid rgba(212,175,55,.14);
+}
+
+.achievement-box h4{
+margin-bottom:16px;
+color:#f4d67b;
+font-size:20px;
+}
+
+.projects{
+display:grid;
+gap:28px;
 }
 
 .project{
 display:grid;
-grid-template-columns:1fr 160px;
-gap:30px;
+grid-template-columns:1fr 180px;
+gap:35px;
 align-items:center;
-padding:34px;
-border-radius:28px;
+padding:38px;
+border-radius:32px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
-margin-bottom:24px;
+transition:.35s;
+}
+
+.project:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.35);
 }
 
 .project-icon{
-width:130px;
-height:130px;
-border-radius:28px;
+width:140px;
+height:140px;
+border-radius:32px;
+background:rgba(212,175,55,.08);
+border:1px solid rgba(212,175,55,.18);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:46px;
-background:rgba(212,175,55,.08);
-border:1px solid rgba(212,175,55,.18);
+font-size:52px;
 margin:auto;
 }
 
 .project h3{
-font-size:28px;
+font-size:30px;
 margin-bottom:14px;
 }
 
 .project p{
 line-height:1.9;
-color:#d4d4d4;
+color:#d7d7d7;
 }
 
 .certifications{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:22px;
+gap:24px;
 }
 
 .cert{
-padding:28px;
-border-radius:24px;
+padding:32px;
+border-radius:28px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
+transition:.35s;
+}
+
+.cert:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.35);
 }
 
 .cert h4{
+font-size:22px;
 margin-bottom:14px;
-color:#f3d578;
+color:#f4d67b;
+}
+
+.philosophy{
+margin-top:70px;
+padding:55px;
+border-radius:36px;
+background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(255,255,255,.03));
+border:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+.philosophy h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.philosophy p{
 font-size:20px;
+line-height:1.9;
+max-width:900px;
+margin:auto;
+color:#d8d8d8;
+font-style:italic;
 }
 
 .contact{
 text-align:center;
-padding:80px 30px;
-border-radius:36px;
+padding:85px 30px;
+border-radius:40px;
 background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(255,255,255,.03));
 border:1px solid rgba(255,255,255,.08);
 }
 
 .contact h2{
-font-size:52px;
+font-size:56px;
 margin-bottom:20px;
 }
 
 .contact p{
-max-width:760px;
+max-width:780px;
 margin:auto;
 line-height:1.9;
-color:#d8d8d8;
-margin-bottom:36px;
+color:#d6d6d6;
+margin-bottom:40px;
 }
 
-footer{
-padding:50px 20px;
-text-align:center;
-color:#9c9c9c;
+.footer-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:20px;
+max-width:1350px;
+margin:auto;
+padding:45px 24px;
 border-top:1px solid rgba(255,255,255,.06);
 margin-top:80px;
+}
+
+.footer-left h3{
+font-size:24px;
+margin-bottom:6px;
+}
+
+.footer-left p{
+color:#9d9d9d;
+line-height:1.7;
+}
+
+.footer-right{
+display:flex;
+gap:18px;
+}
+
+.footer-right a{
+color:#d4af37;
+text-decoration:none;
+font-weight:600;
+}
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.fade-up.active{
+opacity:1;
+transform:translateY(0);
 }
 
 @media(max-width:1000px){
@@ -447,7 +624,7 @@ text-align:center;
 justify-content:center;
 }
 
-.metrics{
+.executive-stats{
 grid-template-columns:repeat(2,1fr);
 }
 
@@ -459,25 +636,37 @@ grid-template-columns:1fr;
 display:none;
 }
 
+.logo-strip{
+justify-content:center;
 }
 
-@media(max-width:640px){
+}
+
+@media(max-width:700px){
 
 .hero h1{
-font-size:64px;
+font-size:68px;
 }
 
 .hero h2{
 font-size:22px;
 }
 
-.metrics{
+.executive-stats{
 grid-template-columns:1fr;
 }
 
 .project{
 grid-template-columns:1fr;
 text-align:center;
+}
+
+.section-title{
+font-size:40px;
+}
+
+.contact h2{
+font-size:42px;
 }
 
 }
@@ -508,16 +697,16 @@ RG
 
 </nav>
 
-<section class="hero">
+<section class="hero fade-up">
 
 <div class="hero-image">
 <img src="formal.png" alt="Rogelio Galon">
 </div>
 
-<div class="hero-content">
+<div>
 
 <div class="badge">
-Luxembourg Accounting • Fund Accounting • International Finance
+Luxembourg Finance • Fund Accounting • International Operations
 </div>
 
 <h1>
@@ -545,24 +734,24 @@ LinkedIn Profile
 
 </div>
 
-<div class="metrics">
+<div class="executive-stats">
 
-<div class="metric">
+<div class="stat">
 <h3>10+</h3>
 <p>Years Professional Experience</p>
 </div>
 
-<div class="metric">
+<div class="stat">
 <h3>Lux</h3>
-<p>Luxembourg Accounting Environment</p>
+<p>Luxembourg Finance Environment</p>
 </div>
 
-<div class="metric">
+<div class="stat">
 <h3>Multi</h3>
-<p>Entity Financial Operations</p>
+<p>Entity Accounting Operations</p>
 </div>
 
-<div class="metric">
+<div class="stat">
 <h3>Intl</h3>
 <p>International Finance Exposure</p>
 </div>
@@ -573,7 +762,7 @@ LinkedIn Profile
 
 </section>
 
-<section id="about">
+<section id="about" class="fade-up">
 
 <h2 class="section-title">
 Executive Profile
@@ -583,31 +772,72 @@ Executive Profile
 
 <div class="glass">
 
-<h3>Professional Summary</h3>
+<h3>
+Professional Summary
+</h3>
 
 <p>
 Experienced Accountant with a solid background in Luxembourg and international accounting environments including fund, insurance, and multi-entity structures. Demonstrated expertise in general ledger accounting, Lux GAAP reporting, month-end and quarter-end closing, reconciliations, audit support, and regulatory compliance.
 <br><br>
-Recognized for reliability, accuracy, financial discipline, and effective collaboration with auditors, tax advisors, and internal stakeholders within fast-paced and deadline-driven environments.
+Recognized for reliability, accuracy, financial discipline, and effective collaboration with auditors, tax advisors, and stakeholders within fast-paced and deadline-driven environments.
 </p>
+
+<div class="logo-strip">
+
+<div class="logo-card">
+🇱🇺 Luxembourg Experience
+</div>
+
+<div class="logo-card">
+📊 Fund Accounting
+</div>
+
+<div class="logo-card">
+💼 International Finance
+</div>
+
+<div class="logo-card">
+📈 Financial Operations
+</div>
+
+</div>
 
 </div>
 
 <div class="glass">
 
-<h3>Education & Certifications</h3>
+<h3>
+Areas of Specialization
+</h3>
 
-<p>
-• Bachelor of Science in Commerce (Accounting)<br><br>
+<table class="specialization-table">
 
-• Diploma in Computer & Internet Programming<br><br>
+<tr>
+<td>Fund Accounting</td>
+<td>Luxembourg Structures & Operations</td>
+</tr>
 
-• EU AI Act – Fundamental of Laws on Artificial Intelligence<br><br>
+<tr>
+<td>Financial Reporting</td>
+<td>Lux GAAP Compliance & Reporting</td>
+</tr>
 
-• ACCA F1 – F3 Equivalences<br><br>
+<tr>
+<td>Audit Coordination</td>
+<td>External Auditors & Documentation</td>
+</tr>
 
-• Leadership & Social Entrepreneurship Training Program
-</p>
+<tr>
+<td>VAT & Tax</td>
+<td>Compliance & Reporting Support</td>
+</tr>
+
+<tr>
+<td>Operations</td>
+<td>Multi-Entity Accounting Environment</td>
+</tr>
+
+</table>
 
 </div>
 
@@ -615,7 +845,7 @@ Recognized for reliability, accuracy, financial discipline, and effective collab
 
 </section>
 
-<section id="expertise">
+<section id="expertise" class="fade-up">
 
 <h2 class="section-title">
 Core Expertise
@@ -642,7 +872,7 @@ Core Expertise
 
 </section>
 
-<section id="experience">
+<section id="experience" class="fade-up">
 
 <h2 class="section-title">
 Professional Experience
@@ -652,7 +882,9 @@ Professional Experience
 
 <div class="timeline-item">
 
-<h3>Finance & Operation Administrator</h3>
+<h3>
+Finance & Operation Administrator
+</h3>
 
 <div class="date">
 SALTGATE S.A. – Luxembourg | 2025 – 2026
@@ -666,11 +898,26 @@ SALTGATE S.A. – Luxembourg | 2025 – 2026
 <li>Provided operational and first-line IT support.</li>
 </ul>
 
+<div class="achievement-box">
+
+<h4>
+Key Contributions
+</h4>
+
+<ul>
+<li>Improved financial operational workflows and reporting efficiency.</li>
+<li>Supported compliance and audit readiness across multiple entities.</li>
+</ul>
+
+</div>
+
 </div>
 
 <div class="timeline-item">
 
-<h3>Senior Fund Accountant</h3>
+<h3>
+Senior Fund Accountant
+</h3>
 
 <div class="date">
 SALTGATE S.A. – Luxembourg | 2022 – 2025
@@ -683,11 +930,26 @@ SALTGATE S.A. – Luxembourg | 2022 – 2025
 <li>Coordinated with tax advisors and external auditors.</li>
 </ul>
 
+<div class="achievement-box">
+
+<h4>
+Key Contributions
+</h4>
+
+<ul>
+<li>Maintained reporting accuracy in deadline-driven environments.</li>
+<li>Contributed to accounting process improvements and controls.</li>
+</ul>
+
+</div>
+
 </div>
 
 <div class="timeline-item">
 
-<h3>Fund Accountant</h3>
+<h3>
+Fund Accountant
+</h3>
 
 <div class="date">
 SALTGATE S.A. – Luxembourg | 2016 – 2022
@@ -703,7 +965,9 @@ SALTGATE S.A. – Luxembourg | 2016 – 2022
 
 <div class="timeline-item">
 
-<h3>IT Support & Computer Training</h3>
+<h3>
+IT Support & Computer Training
+</h3>
 
 <div class="date">
 Paris, France | 2009 – 2016
@@ -721,11 +985,13 @@ Paris, France | 2009 – 2016
 
 </section>
 
-<section id="projects">
+<section id="projects" class="fade-up">
 
 <h2 class="section-title">
 Featured Projects
 </h2>
+
+<div class="projects">
 
 <div class="project">
 
@@ -787,9 +1053,11 @@ Supported analysis, programming, testing, and business process automation using 
 
 </div>
 
+</div>
+
 </section>
 
-<section>
+<section class="fade-up">
 
 <h2 class="section-title">
 Certifications & Recognition
@@ -798,31 +1066,57 @@ Certifications & Recognition
 <div class="certifications">
 
 <div class="cert">
-<h4>EU AI Act Certification</h4>
+<h4>
+EU AI Act Certification
+</h4>
+
 <p>
 Fundamentals of Laws on Artificial Intelligence
 </p>
+
 </div>
 
 <div class="cert">
-<h4>ACCA Equivalences</h4>
+
+<h4>
+ACCA Equivalences
+</h4>
+
 <p>
 F1 – F3 Accounting Foundations
 </p>
+
 </div>
 
 <div class="cert">
-<h4>Leadership Training</h4>
+
+<h4>
+Leadership Training
+</h4>
+
 <p>
 Leadership and Social Entrepreneurship Program – Paris, France
 </p>
+
 </div>
+
+</div>
+
+<div class="philosophy">
+
+<h2>
+Professional Philosophy
+</h2>
+
+<p>
+“I believe strong financial governance, precision, compliance, and operational discipline are essential foundations for sustainable business growth and long-term organizational success.”
+</p>
 
 </div>
 
 </section>
 
-<section id="contact">
+<section id="contact" class="fade-up">
 
 <div class="contact">
 
@@ -851,12 +1145,56 @@ View LinkedIn
 </section>
 
 <footer>
-© 2026 Rogelio Galon | Executive Finance Portfolio
+
+<div class="footer-content">
+
+<div class="footer-left">
+
+<h3>
+Rogelio Galon
+</h3>
+
+<p>
+Senior Finance & Accounting Professional<br>
+Luxembourg • International Finance • Fund Accounting
+</p>
+
+</div>
+
+<div class="footer-right">
+
+<a href="mailto:rbgalonjr@hotmail.com">
+Email
+</a>
+
+<a href="Rogelio B Galon Jr. - CV.pdf" download>
+Download CV
+</a>
+
+<a href="https://www.linkedin.com/in/rogelio-jr-galon-2a026449/" target="_blank">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
 </footer>
 
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "325563ed0efb47b181803d1ec1e67bba"}'></script>
-<!-- End Cloudflare Web Analytics -->
+<script>
 
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+});
+
+document.querySelectorAll('.fade-up').forEach((el)=>{
+observer.observe(el);
+});
+
+</script>
 </body>
 </html>
