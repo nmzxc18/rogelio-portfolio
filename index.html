@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rogelio Galon | Senior Finance & Accounting Professional</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rogelio Galon | Executive Finance Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -20,9 +24,10 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Inter',sans-serif;
-background:#060b14;
-color:#fff;
+background:#050b14;
+color:white;
 overflow-x:hidden;
+position:relative;
 }
 
 body::before{
@@ -30,78 +35,103 @@ content:'';
 position:fixed;
 inset:0;
 background:
-linear-gradient(rgba(4,10,20,.88),rgba(4,10,20,.92)),
-url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop');
+linear-gradient(rgba(5,11,20,.92),rgba(5,11,20,.96)),
+url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1974&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-z-index:-2;
+z-index:-3;
 }
 
 body::after{
 content:'';
 position:fixed;
-width:700px;
-height:700px;
-background:radial-gradient(circle,rgba(212,175,55,.12),transparent 70%);
-top:-200px;
-right:-150px;
-z-index:-1;
-filter:blur(30px);
+width:900px;
+height:900px;
+background:radial-gradient(circle, rgba(212,175,55,.10), transparent 70%);
+top:-300px;
+right:-200px;
+z-index:-2;
+animation:floatGlow 12s ease-in-out infinite;
 }
 
-.progress-bar{
+@keyframes floatGlow{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(30px);}
+}
+
+.cursor-glow{
+width:280px;
+height:280px;
+background:radial-gradient(circle, rgba(212,175,55,.12), transparent 70%);
 position:fixed;
-top:0;
-left:0;
-width:0%;
-height:4px;
-background:#d4af37;
-z-index:99999;
-box-shadow:0 0 20px rgba(212,175,55,.6);
+pointer-events:none;
+border-radius:50%;
+transform:translate(-50%,-50%);
+z-index:-1;
+filter:blur(25px);
 }
 
 nav{
 position:fixed;
 top:0;
-left:0;
 width:100%;
 z-index:999;
-backdrop-filter:blur(16px);
-background:rgba(5,10,18,.55);
-border-bottom:1px solid rgba(255,255,255,.08);
-transition:.3s;
-}
-
-nav.scrolled{
-background:rgba(3,8,15,.82);
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
+background:rgba(5,11,20,.65);
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-container{
-max-width:1300px;
+max-width:1400px;
 margin:auto;
-padding:20px;
+padding:20px 24px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
 .logo{
-font-size:18px;
-font-weight:800;
-letter-spacing:.5px;
+font-size:28px;
+font-weight:900;
+color:#d4af37;
+letter-spacing:2px;
+}
+
+.logo span{
+display:block;
+font-size:11px;
+letter-spacing:4px;
+font-weight:500;
+color:#fff;
+margin-top:5px;
 }
 
 .nav-links{
 display:flex;
-gap:28px;
+gap:35px;
 }
 
 .nav-links a{
 text-decoration:none;
-color:#d9d9d9;
-font-size:15px;
+color:#ddd;
+font-weight:500;
+position:relative;
 transition:.3s;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:0%;
+height:2px;
+background:#d4af37;
+transition:.3s;
+}
+
+.nav-links a:hover::after{
+width:100%;
 }
 
 .nav-links a:hover{
@@ -109,143 +139,155 @@ color:#d4af37;
 }
 
 .hero{
-min-height:100vh;
-display:grid;
-grid-template-columns:520px 1fr;
-gap:60px;
-align-items:center;
-max-width:1300px;
+max-width:1400px;
 margin:auto;
-padding:140px 20px 80px;
+padding:170px 24px 120px;
+display:grid;
+grid-template-columns:480px 1fr;
+gap:80px;
+align-items:center;
+min-height:100vh;
 }
 
 .hero-image{
 position:relative;
+animation:floatHero 6s ease-in-out infinite;
+}
+
+@keyframes floatHero{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
 }
 
 .hero-image::before{
 content:'';
 position:absolute;
-inset:-20px;
-background:radial-gradient(circle,rgba(212,175,55,.18),transparent 65%);
-filter:blur(60px);
-z-index:0;
+width:420px;
+height:420px;
+background:rgba(212,175,55,.15);
+border-radius:50%;
+filter:blur(100px);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 }
 
 .hero-image img{
 width:100%;
-border-radius:34px;
-position:relative;
-z-index:1;
+border-radius:38px;
 border:1px solid rgba(255,255,255,.08);
-box-shadow:0 20px 60px rgba(0,0,0,.45);
+box-shadow:0 40px 90px rgba(0,0,0,.55);
+position:relative;
+z-index:2;
 }
 
 .badge{
-display:inline-flex;
-align-items:center;
-gap:10px;
+display:inline-block;
 padding:12px 18px;
 border-radius:999px;
-border:1px solid rgba(212,175,55,.35);
 background:rgba(212,175,55,.08);
-color:#f0d77c;
+border:1px solid rgba(212,175,55,.25);
+color:#f5d77d;
 font-size:14px;
-margin-bottom:24px;
+margin-bottom:28px;
+backdrop-filter:blur(12px);
 }
 
 .hero h1{
-font-size:92px;
-line-height:.95;
+font-size:clamp(70px,9vw,120px);
+line-height:.92;
 font-weight:900;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
 .hero h1 span{
 color:#d4af37;
-display:block;
 }
 
-.hero-subtitle{
-font-size:24px;
-font-weight:700;
-margin-bottom:24px;
-color:#f3f3f3;
+.hero h2{
+font-size:30px;
+font-weight:600;
+margin-bottom:28px;
+color:#ececec;
 }
 
 .hero p{
-font-size:20px;
+font-size:18px;
 line-height:1.9;
-color:#d5d5d5;
+color:#cfcfcf;
 max-width:760px;
+margin-bottom:42px;
 }
 
 .buttons{
 display:flex;
-gap:18px;
-margin-top:36px;
 flex-wrap:wrap;
+gap:18px;
+margin-bottom:42px;
 }
 
 .btn{
 padding:16px 30px;
-border-radius:16px;
+border-radius:18px;
 text-decoration:none;
 font-weight:700;
 transition:.35s;
-font-size:16px;
+display:inline-flex;
+align-items:center;
+gap:10px;
 }
 
 .btn-primary{
-background:#d4af37;
+background:linear-gradient(135deg,#d4af37,#f5d77d);
 color:#111;
-box-shadow:0 0 30px rgba(212,175,55,.25);
+box-shadow:0 18px 40px rgba(212,175,55,.24);
 }
 
 .btn-primary:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 35px rgba(212,175,55,.45);
+transform:translateY(-5px);
 }
 
 .btn-secondary{
-border:1px solid rgba(255,255,255,.18);
-color:#fff;
-background:rgba(255,255,255,.03);
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.12);
+color:white;
 }
 
 .btn-secondary:hover{
 border-color:#d4af37;
 color:#d4af37;
-transform:translateY(-4px);
+transform:translateY(-5px);
 }
 
 .executive-stats{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:18px;
-margin-top:50px;
+gap:16px;
+max-width:760px;
 }
 
 .stat{
-padding:24px 22px;
+padding:24px 20px;
 border-radius:24px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
 backdrop-filter:blur(14px);
 transition:.35s;
-min-height:180px;
+min-height:150px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
 .stat:hover{
 transform:translateY(-8px);
 border-color:rgba(212,175,55,.35);
-box-shadow:0 20px 40px rgba(0,0,0,.35);
 }
 
 .stat h3{
 font-size:42px;
 color:#d4af37;
-margin-bottom:12px;
+margin-bottom:10px;
 font-weight:800;
 line-height:1;
 }
@@ -254,371 +296,345 @@ line-height:1;
 line-height:1.6;
 color:#d7d7d7;
 font-size:15px;
+max-width:140px;
 }
 
 section{
-max-width:1300px;
+max-width:1400px;
 margin:auto;
-padding:110px 20px;
+padding:120px 24px;
+}
+
+.section-sub{
+color:#d4af37;
+letter-spacing:3px;
+text-transform:uppercase;
+font-size:14px;
+font-weight:700;
+margin-bottom:16px;
 }
 
 .section-title{
-font-size:56px;
+font-size:58px;
 font-weight:900;
+line-height:1;
 margin-bottom:60px;
 }
 
-.quote-box{
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-padding:50px;
-border-radius:30px;
-text-align:center;
-backdrop-filter:blur(12px);
-}
-
-.quote-box p{
-font-size:30px;
-font-weight:600;
-line-height:1.7;
-color:#f5f5f5;
-}
-
-.quote-box span{
-display:block;
-margin-top:20px;
-font-size:15px;
-letter-spacing:2px;
-color:#d4af37;
-}
-
 .timeline{
-display:grid;
-gap:30px;
+position:relative;
+padding-left:45px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:10px;
+top:0;
+width:2px;
+height:100%;
+background:linear-gradient(to bottom,#d4af37,transparent);
 }
 
 .timeline-item{
-padding:36px;
-border-radius:28px;
+position:relative;
+margin-bottom:40px;
+padding:38px;
+border-radius:34px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
 transition:.35s;
 }
 
 .timeline-item:hover{
-transform:translateY(-8px);
-border-color:rgba(212,175,55,.3);
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.35);
 }
 
-.timeline-year{
-font-size:14px;
-letter-spacing:2px;
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-43px;
+top:45px;
+width:18px;
+height:18px;
+border-radius:50%;
+background:#d4af37;
+box-shadow:0 0 25px rgba(212,175,55,.7);
+}
+
+.timeline-item h3{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.date{
 color:#d4af37;
-margin-bottom:12px;
-}
-
-.timeline-title{
-font-size:28px;
-font-weight:800;
-margin-bottom:12px;
-}
-
-.timeline-company{
-font-size:18px;
-color:#d7d7d7;
-margin-bottom:18px;
+margin-bottom:20px;
+font-weight:600;
 }
 
 .timeline-item ul{
 padding-left:20px;
-color:#d7d7d7;
 line-height:1.9;
+color:#d8d8d8;
 }
 
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.timeline-item li{
+margin-bottom:10px;
 }
 
-.skill{
-padding:22px;
-border-radius:20px;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
-font-weight:600;
-transition:.3s;
-}
-
-.skill:hover{
-transform:translateY(-6px);
-border-color:rgba(212,175,55,.35);
-color:#d4af37;
-}
-
-.contact-card{
-padding:60px;
-border-radius:34px;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.08);
+.contact{
 text-align:center;
-backdrop-filter:blur(14px);
+padding:90px 30px;
+border-radius:42px;
+background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(255,255,255,.03));
+border:1px solid rgba(255,255,255,.08);
 }
 
-.contact-card h3{
-font-size:42px;
-margin-bottom:20px;
+.contact h2{
+font-size:58px;
+margin-bottom:18px;
 }
 
-.contact-card p{
-font-size:18px;
-line-height:1.8;
-color:#d5d5d5;
-max-width:700px;
+.contact p{
+max-width:820px;
 margin:auto;
-}
-
-.contact-links{
-display:flex;
-justify-content:center;
-gap:18px;
-margin-top:35px;
-flex-wrap:wrap;
+line-height:1.9;
+color:#d5d5d5;
+margin-bottom:40px;
 }
 
 footer{
-padding:50px 20px;
-border-top:1px solid rgba(255,255,255,.08);
+padding:70px 24px 40px;
 text-align:center;
-color:#a9a9a9;
-line-height:1.9;
-font-size:15px;
-}
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all .9s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
+border-top:1px solid rgba(255,255,255,.08);
+color:#bdbdbd;
+line-height:1.8;
 }
 
 @media(max-width:1100px){
 
 .hero{
 grid-template-columns:1fr;
+text-align:center;
 }
 
-.hero h1{
-font-size:72px;
+.buttons{
+justify-content:center;
 }
 
 .executive-stats{
 grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:768px){
-
-.hero{
-padding-top:120px;
-}
-
-.hero h1{
-font-size:54px;
-}
-
-.section-title{
-font-size:42px;
-}
-
-.executive-stats{
-grid-template-columns:1fr;
+margin:auto;
 }
 
 .nav-links{
 display:none;
 }
 
-.quote-box p{
-font-size:22px;
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:72px;
+}
+
+.executive-stats{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:44px;
+}
+
+.contact h2{
+font-size:42px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-glow"></div>
 
-<nav id="navbar">
+<nav>
+
 <div class="nav-container">
-<div class="logo">Rogelio Galon</div>
+
+<div class="logo">
+RG
+<span>EXECUTIVE FINANCE PORTFOLIO</span>
+</div>
 
 <div class="nav-links">
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
-<a href="#expertise">Expertise</a>
 <a href="#contact">Contact</a>
 </div>
+
 </div>
+
 </nav>
 
 <section class="hero">
 
-<div class="hero-image reveal">
+<div class="hero-image">
 <img src="formal.png" alt="Rogelio Galon">
 </div>
 
-<div class="hero-text reveal">
+<div>
 
 <div class="badge">
 Luxembourg Finance • Fund Accounting • International Operations
 </div>
 
 <h1>
-Rogelio
+Rogelio<br>
 <span>Galon</span>
 </h1>
 
-<div class="hero-subtitle">
+<h2>
 Senior Finance & Accounting Professional
-</div>
+</h2>
 
 <p>
 Experienced accounting professional with extensive exposure to Luxembourg and international accounting environments specializing in fund accounting, Lux GAAP reporting, reconciliations, audit coordination, VAT support, and multi-entity financial operations.
 </p>
 
 <div class="buttons">
-<a class="btn btn-primary" href="Rogelio_Galon_CV.pdf" download onclick="trackDownload()">⬇ Download CV</a>
 
-<a class="btn btn-secondary" href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+<a class="btn btn-primary" href="Rogelio B Galon Jr. - CV.pdf" download>
+⬇ Download CV
+</a>
+
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/rogelio-jr-galon-2a026449/" target="_blank">
+LinkedIn Profile
+</a>
+
 </div>
 
 <div class="executive-stats">
 
 <div class="stat">
 <h3>10+</h3>
-<p>Years Professional Experience</p>
+<p>Years Experience</p>
 </div>
 
 <div class="stat">
 <h3>Lux</h3>
-<p>Luxembourg Finance Environment</p>
+<p>Luxembourg Finance</p>
 </div>
 
 <div class="stat">
 <h3>MEA</h3>
-<p>Multi-Entity Accounting Operations</p>
+<p>Multi-Entity Ops</p>
 </div>
 
 <div class="stat">
 <h3>Global</h3>
-<p>International Finance Exposure</p>
+<p>International Exposure</p>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
 <section id="about">
 
-<h2 class="section-title reveal">Professional Philosophy</h2>
+<div class="section-sub">
+Executive Overview
+</div>
 
-<div class="quote-box reveal">
-<p>
-“Accuracy, compliance, and financial integrity drive sustainable business operations and long-term organizational trust.”
+<h2 class="section-title">
+Professional Philosophy
+</h2>
+
+<div class="timeline-item">
+
+<p style="font-size:22px; line-height:2; color:#d8d8d8; font-style:italic;">
+“Accuracy, compliance, and operational discipline create the foundation for sustainable business growth and long-term organizational success.”
 </p>
 
-<span>ROGELIO GALON</span>
 </div>
 
 </section>
 
 <section id="experience">
 
-<h2 class="section-title reveal">Professional Experience</h2>
+<div class="section-sub">
+Career Timeline
+</div>
+
+<h2 class="section-title">
+Professional Experience
+</h2>
 
 <div class="timeline">
 
-<div class="timeline-item reveal">
+<div class="timeline-item">
 
-<div class="timeline-year">
-2019 — PRESENT
-</div>
+<h3>
+Finance & Operation Administrator
+</h3>
 
-<div class="timeline-title">
-Senior Finance & Accounting Operations
-</div>
-
-<div class="timeline-company">
-International Finance Environment
+<div class="date">
+SALTGATE S.A. – Luxembourg | 2025 – 2026
 </div>
 
 <ul>
-<li>Managed financial reporting and reconciliation processes.</li>
-<li>Supported Lux GAAP and multi-entity accounting operations.</li>
-<li>Handled audit coordination and compliance documentation.</li>
-<li>Maintained accuracy of financial records and reporting workflows.</li>
-<li>Collaborated with international stakeholders and finance teams.</li>
+<li>Managed accounting operations across multiple entities.</li>
+<li>Prepared reconciliations, reports, and financial documentation.</li>
+<li>Supported audits, VAT compliance, and operational finance activities.</li>
+<li>Provided operational coordination and IT support functions.</li>
 </ul>
 
 </div>
 
-<div class="timeline-item reveal">
+<div class="timeline-item">
 
-<div class="timeline-year">
-PREVIOUS EXPERIENCE
-</div>
+<h3>
+Senior Fund Accountant
+</h3>
 
-<div class="timeline-title">
-Finance & Accounting Support
-</div>
-
-<div class="timeline-company">
-Corporate Accounting Operations
+<div class="date">
+SALTGATE S.A. – Luxembourg | 2022 – 2025
 </div>
 
 <ul>
-<li>Performed account reconciliation and reporting tasks.</li>
-<li>Supported accounts payable and receivable processes.</li>
-<li>Prepared financial documentation and audit requirements.</li>
-<li>Assisted in maintaining operational financial controls.</li>
+<li>Handled Lux GAAP reporting and fund accounting operations.</li>
+<li>Prepared financial statements and closing activities.</li>
+<li>Coordinated with auditors and tax advisors.</li>
+<li>Supported operational accounting improvements.</li>
 </ul>
 
 </div>
 
+<div class="timeline-item">
+
+<h3>
+Fund Accountant
+</h3>
+
+<div class="date">
+SALTGATE S.A. – Luxembourg | 2016 – 2022
 </div>
 
-</section>
+<ul>
+<li>Performed reconciliations and accounting support tasks.</li>
+<li>Handled operational accounting and financial monitoring.</li>
+<li>Supported reporting and audit preparation processes.</li>
+</ul>
 
-<section id="expertise">
-
-<h2 class="section-title reveal">Core Expertise</h2>
-
-<div class="skills-grid">
-
-<div class="skill reveal">Lux GAAP Reporting</div>
-<div class="skill reveal">Fund Accounting</div>
-<div class="skill reveal">Financial Reporting</div>
-<div class="skill reveal">Audit Coordination</div>
-<div class="skill reveal">VAT & Tax Support</div>
-<div class="skill reveal">Accounts Payable & Receivable</div>
-<div class="skill reveal">Balance Sheet Analysis</div>
-<div class="skill reveal">Cash Flow Monitoring</div>
-<div class="skill reveal">Reconciliations</div>
-<div class="skill reveal">Trial Balances</div>
-<div class="skill reveal">Advanced Excel</div>
-<div class="skill reveal">Multi-Entity Accounting</div>
-<div class="skill reveal">Financial Controls</div>
-<div class="skill reveal">Documentation & Compliance</div>
+</div>
 
 </div>
 
@@ -626,22 +642,24 @@ Corporate Accounting Operations
 
 <section id="contact">
 
-<div class="contact-card reveal">
+<div class="contact">
 
-<h3>Open for Professional Opportunities</h3>
+<h2>
+Open for International Opportunities
+</h2>
 
 <p>
-Available for finance and accounting opportunities involving international operations, fund accounting, financial reporting, and compliance-focused environments.
+Available for finance, accounting, fund accounting, and operational finance opportunities across Luxembourg and international business environments.
 </p>
 
-<div class="contact-links">
+<div class="buttons" style="justify-content:center;">
 
-<a class="btn btn-primary" href="mailto:your@email.com">
+<a class="btn btn-primary" href="mailto:rbgalonjr@hotmail.com">
 Email Contact
 </a>
 
-<a class="btn btn-secondary" href="https://linkedin.com" target="_blank">
-LinkedIn
+<a class="btn btn-secondary" href="Rogelio B Galon Jr. - CV.pdf" download>
+Download CV
 </a>
 
 </div>
@@ -660,39 +678,12 @@ Luxembourg Finance • International Operations • Fund Accounting
 
 <script>
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('active');
-}
+const glow=document.querySelector('.cursor-glow');
+
+document.addEventListener('mousemove',(e)=>{
+glow.style.left=e.clientX+'px';
+glow.style.top=e.clientY+'px';
 });
-},{threshold:.12});
-
-document.querySelectorAll('.reveal').forEach(el=>{
-observer.observe(el);
-});
-
-window.addEventListener('scroll',()=>{
-
-const scrollTop=document.documentElement.scrollTop;
-const scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-const progress=(scrollTop/scrollHeight)*100;
-
-document.getElementById('progressBar').style.width=progress+'%';
-
-const nav=document.getElementById('navbar');
-
-if(scrollTop>40){
-nav.classList.add('scrolled');
-}else{
-nav.classList.remove('scrolled');
-}
-
-});
-
-function trackDownload(){
-console.log('CV Downloaded');
-}
 
 </script>
 </body>
