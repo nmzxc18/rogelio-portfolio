@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rogelio Galon | Accounting Professional</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#07111f;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(4,12,24,.88),rgba(4,12,24,.92)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1920&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+body::after{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top left, rgba(212,175,55,.18), transparent 35%),
+radial-gradient(circle at bottom right, rgba(255,255,255,.05), transparent 30%);
+z-index:-1;
+}
+
+nav{
+position:sticky;
+top:0;
+backdrop-filter:blur(16px);
+background:rgba(4,10,20,.75);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+}
+
+.nav-container{
+max-width:1250px;
+margin:auto;
+padding:18px 22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+letter-spacing:1px;
+color:#d4af37;
+}
+
+.logo span{
+color:white;
+font-weight:600;
+font-size:14px;
+display:block;
+letter-spacing:2px;
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#e4e4e4;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#d4af37;
+}
+
+.hero{
+max-width:1250px;
+margin:auto;
+min-height:100vh;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+align-items:center;
+gap:60px;
+padding:80px 22px;
+}
+
+.badge{
+display:inline-block;
+padding:12px 18px;
+border:1px solid rgba(212,175,55,.4);
+background:rgba(212,175,55,.08);
+border-radius:999px;
+font-size:14px;
+color:#f4d67b;
+margin-bottom:28px;
+}
+
+.hero h1{
+font-size:clamp(58px,8vw,110px);
+line-height:.95;
+margin-bottom:22px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#d4af37;
+}
+
+.hero h2{
+font-size:30px;
+font-weight:600;
+margin-bottom:22px;
+color:#f0f0f0;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.9;
+color:#cfcfcf;
+max-width:700px;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:18px;
+}
+
+.btn{
+padding:16px 28px;
+border-radius:16px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+display:inline-flex;
+align-items:center;
+gap:10px;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#d4af37,#f5d67a);
+color:#111;
+box-shadow:0 10px 35px rgba(212,175,55,.28);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.14);
+color:white;
+background:rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover{
+border-color:#d4af37;
+color:#d4af37;
+}
+
+.hero-image{
+display:flex;
+justify-content:center;
+position:relative;
+}
+
+.hero-image::before{
+content:'';
+position:absolute;
+width:430px;
+height:430px;
+background:rgba(212,175,55,.14);
+filter:blur(90px);
+border-radius:50%;
+z-index:0;
+}
+
+.hero-image img{
+width:100%;
+max-width:500px;
+border-radius:32px;
+position:relative;
+z-index:1;
+box-shadow:0 25px 60px rgba(0,0,0,.5);
+border:1px solid rgba(255,255,255,.08);
+}
+
+section{
+max-width:1250px;
+margin:auto;
+padding:100px 22px;
+}
+
+.section-title{
+font-size:42px;
+margin-bottom:55px;
+font-weight:800;
+color:white;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:26px;
+padding:34px;
+backdrop-filter:blur(12px);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(212,175,55,.4);
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:14px;
+color:#f4d67b;
+}
+
+.card p,
+.card li{
+color:#d5d5d5;
+line-height:1.8;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+}
+
+.skill{
+padding:24px;
+border-radius:22px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+font-weight:600;
+color:#f5f5f5;
+}
+
+.skill:hover{
+transform:translateY(-5px);
+border-color:#d4af37;
+}
+
+.timeline{
+display:grid;
+gap:24px;
+}
+
+.timeline-item{
+background:rgba(255,255,255,.04);
+border-left:4px solid #d4af37;
+padding:30px;
+border-radius:20px;
+}
+
+.timeline-item h3{
+font-size:24px;
+margin-bottom:8px;
+}
+
+.timeline-item .date{
+color:#d4af37;
+margin-bottom:16px;
+font-weight:600;
+}
+
+.timeline-item ul{
+padding-left:20px;
+}
+
+.timeline-item li{
+margin-bottom:10px;
+}
+
+.contact-box{
+text-align:center;
+padding:70px 30px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+}
+
+.contact-box h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.contact-box p{
+max-width:750px;
+margin:auto;
+line-height:1.9;
+color:#d4d4d4;
+margin-bottom:35px;
+}
+
+footer{
+padding:50px 20px;
+text-align:center;
+color:#9f9f9f;
+border-top:1px solid rgba(255,255,255,.06);
+margin-top:80px;
+}
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.hero{
+padding-top:60px;
+text-align:center;
+}
+
+.buttons{
+justify-content:center;
+}
+
+.hero h1{
+font-size:64px;
+}
+
+.hero h2{
+font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">
+RG
+<span>ACCOUNTING PROFESSIONAL</span>
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero">
+
+<div>
+
+<div class="badge">
+Senior Fund Accountant • Luxembourg Accounting • International Finance
+</div>
+
+<h1>
+Rogelio<br>
+<span>Galon</span>
+</h1>
+
+<h2>
+Accounting & Finance Professional
+</h2>
+
+<p>
+Experienced accountant with a strong background in Luxembourg and international accounting environments including fund accounting, financial reporting, reconciliations, audit support, and multi-entity operations. Recognized for reliability, accuracy, compliance, and operational excellence in deadline-driven environments.
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-primary" href="Rogelio B Galon Jr. - CV.pdf" download>
+⬇ Download CV
+</a>
+
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/rogelio-jr-galon-2a026449/" target="_blank">
+LinkedIn Profile
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="formal.png" alt="Rogelio Galon">
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Professional Summary</h3>
+
+<p>
+Experienced Accountant with extensive exposure to Luxembourg and international accounting environments, specializing in fund accounting, financial reporting, reconciliations, audit coordination, VAT support, and multi-entity operations. Adept at maintaining financial accuracy, ensuring compliance, and collaborating effectively with stakeholders and auditors.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Education</h3>
+
+<p>
+Bachelor of Science in Commerce (Accounting)<br><br>
+De La Salle Araneta University
+</p>
+
+<br>
+
+<p>
+Diploma in Computer & Internet Programming<br><br>
+EXPERT IT Education Center
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Certifications</h3>
+
+<p>
+• EU AI Act - Fundamentals of Laws on Artificial Intelligence<br><br>
+• Leadership & Social Entrepreneurship Training Program<br><br>
+• Certificate of Competence in Basic Accounting<br><br>
+• ACCA F1 – F3 Equivalences
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">
+Core Competencies
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill">Lux GAAP Accounting</div>
+<div class="skill">Financial Reporting</div>
+<div class="skill">Fund Accounting</div>
+<div class="skill">Audit Coordination</div>
+<div class="skill">VAT & Tax Support</div>
+<div class="skill">Accounts Payable & Receivable</div>
+<div class="skill">Balance Sheet Analysis</div>
+<div class="skill">Cash Flow Monitoring</div>
+<div class="skill">Reconciliations</div>
+<div class="skill">Advanced Excel</div>
+<div class="skill">Financial Documentation</div>
+<div class="skill">Multi-Entity Accounting</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">
+Professional Experience
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>SALTGATE S.A. – Luxembourg</h3>
+<div class="date">2015 – 2026</div>
+
+<ul>
+<li>Managed full accounting cycles for multiple entities.</li>
+<li>Prepared financial reports, reconciliations, and statutory documentation.</li>
+<li>Supported audits, VAT compliance, and tax coordination.</li>
+<li>Oversaw month-end and quarter-end closings.</li>
+<li>Maintained strong accounting controls and operational accuracy.</li>
+</ul>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Senior Fund Accountant</h3>
+<div class="date">2022 – 2025</div>
+
+<ul>
+<li>Handled Lux GAAP financial reporting and fund accounting operations.</li>
+<li>Managed journal entries, accruals, and reconciliations.</li>
+<li>Prepared financial statements and audit documentation.</li>
+<li>Supported process improvements and compliance initiatives.</li>
+</ul>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>IT Support & Computer Training</h3>
+<div class="date">2009 – 2016</div>
+
+<ul>
+<li>Delivered IT support and computer training services.</li>
+<li>Maintained systems and improved user productivity.</li>
+<li>Provided technical troubleshooting and system maintenance.</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Client Management System</h3>
+
+<p>
+Designed and developed a client information management system that streamlined client data handling and improved operational efficiency.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Integrated Business Automation Solution</h3>
+
+<p>
+Supported system analysis, design, programming, and testing using Visual Studio and SQL Server for centralized business operations.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Payment Tracking Tool</h3>
+
+<p>
+Designed a workflow visibility and payment tracking tool that improved operational monitoring and reduced accounts payable errors.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>
+Let’s Connect
+</h2>
+
+<p>
+Open to international accounting, finance, and fund accounting opportunities. Available for Luxembourg and global finance environments.
+</p>
+
+<div class="buttons" style="justify-content:center;">
+
+<a class="btn btn-primary" href="mailto:rbgalonjr@hotmail.com">
+rbgalonjr@hotmail.com
+</a>
+
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/rogelio-jr-galon-2a026449/" target="_blank">
+View LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Rogelio Galon • Accounting & Finance Portfolio
+</footer>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "325563ed0efb47b181803d1ec1e67bba"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
