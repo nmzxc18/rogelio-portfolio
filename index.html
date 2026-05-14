@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rogelio Galon | Accounting Professional</title>
+
+<title>Rogelio Galon | Executive Finance Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -30,8 +32,8 @@ content:'';
 position:fixed;
 inset:0;
 background:
-linear-gradient(rgba(4,12,24,.88),rgba(4,12,24,.92)),
-url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1920&auto=format&fit=crop');
+linear-gradient(rgba(5,10,18,.92),rgba(5,10,18,.96)),
+url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1974&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
 z-index:-2;
@@ -42,7 +44,7 @@ content:'';
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at top left, rgba(212,175,55,.18), transparent 35%),
+radial-gradient(circle at top left, rgba(212,175,55,.14), transparent 30%),
 radial-gradient(circle at bottom right, rgba(255,255,255,.05), transparent 30%);
 z-index:-1;
 }
@@ -50,16 +52,16 @@ z-index:-1;
 nav{
 position:sticky;
 top:0;
-backdrop-filter:blur(16px);
-background:rgba(4,10,20,.75);
-border-bottom:1px solid rgba(255,255,255,.08);
 z-index:999;
+backdrop-filter:blur(16px);
+background:rgba(7,17,31,.75);
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-container{
-max-width:1250px;
+max-width:1300px;
 margin:auto;
-padding:18px 22px;
+padding:18px 24px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -68,16 +70,17 @@ align-items:center;
 .logo{
 font-size:24px;
 font-weight:800;
-letter-spacing:1px;
 color:#d4af37;
+letter-spacing:1px;
 }
 
 .logo span{
-color:white;
-font-weight:600;
-font-size:14px;
 display:block;
-letter-spacing:2px;
+font-size:12px;
+letter-spacing:3px;
+font-weight:500;
+color:#fff;
+margin-top:3px;
 }
 
 .nav-links{
@@ -87,7 +90,7 @@ gap:28px;
 
 .nav-links a{
 text-decoration:none;
-color:#e4e4e4;
+color:#ddd;
 font-weight:500;
 transition:.3s;
 }
@@ -97,31 +100,61 @@ color:#d4af37;
 }
 
 .hero{
-max-width:1250px;
+max-width:1300px;
 margin:auto;
-min-height:100vh;
+padding:80px 24px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:520px 1fr;
+gap:80px;
 align-items:center;
-gap:60px;
-padding:80px 22px;
+min-height:100vh;
+}
+
+.hero-image{
+position:relative;
+}
+
+.hero-image::before{
+content:'';
+position:absolute;
+width:420px;
+height:420px;
+background:rgba(212,175,55,.15);
+filter:blur(100px);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.hero-image img{
+width:100%;
+border-radius:36px;
+position:relative;
+z-index:2;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 30px 70px rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
 }
 
 .badge{
 display:inline-block;
 padding:12px 18px;
+border-radius:999px;
 border:1px solid rgba(212,175,55,.4);
 background:rgba(212,175,55,.08);
-border-radius:999px;
+color:#f7d97b;
 font-size:14px;
-color:#f4d67b;
 margin-bottom:28px;
 }
 
 .hero h1{
-font-size:clamp(58px,8vw,110px);
-line-height:.95;
-margin-bottom:22px;
+font-size:clamp(60px,8vw,110px);
+line-height:.92;
+margin-bottom:18px;
 font-weight:800;
 }
 
@@ -132,7 +165,7 @@ color:#d4af37;
 .hero h2{
 font-size:30px;
 font-weight:600;
-margin-bottom:22px;
+margin-bottom:26px;
 color:#f0f0f0;
 }
 
@@ -140,19 +173,20 @@ color:#f0f0f0;
 font-size:18px;
 line-height:1.9;
 color:#cfcfcf;
-max-width:700px;
-margin-bottom:35px;
+max-width:720px;
+margin-bottom:36px;
 }
 
 .buttons{
 display:flex;
 flex-wrap:wrap;
 gap:18px;
+margin-bottom:50px;
 }
 
 .btn{
-padding:16px 28px;
-border-radius:16px;
+padding:16px 30px;
+border-radius:18px;
 text-decoration:none;
 font-weight:700;
 transition:.3s;
@@ -162,19 +196,19 @@ gap:10px;
 }
 
 .btn-primary{
-background:linear-gradient(135deg,#d4af37,#f5d67a);
+background:linear-gradient(135deg,#d4af37,#f8db84);
 color:#111;
-box-shadow:0 10px 35px rgba(212,175,55,.28);
+box-shadow:0 12px 35px rgba(212,175,55,.25);
 }
 
 .btn-primary:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
 }
 
 .btn-secondary{
-border:1px solid rgba(255,255,255,.14);
-color:white;
+border:1px solid rgba(255,255,255,.12);
 background:rgba(255,255,255,.04);
+color:white;
 }
 
 .btn-secondary:hover{
@@ -182,167 +216,230 @@ border-color:#d4af37;
 color:#d4af37;
 }
 
-.hero-image{
-display:flex;
-justify-content:center;
-position:relative;
+.metrics{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
 }
 
-.hero-image::before{
-content:'';
-position:absolute;
-width:430px;
-height:430px;
-background:rgba(212,175,55,.14);
-filter:blur(90px);
-border-radius:50%;
-z-index:0;
+.metric{
+padding:22px;
+border-radius:22px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.06);
+backdrop-filter:blur(12px);
 }
 
-.hero-image img{
-width:100%;
-max-width:500px;
-border-radius:32px;
-position:relative;
-z-index:1;
-box-shadow:0 25px 60px rgba(0,0,0,.5);
-border:1px solid rgba(255,255,255,.08);
+.metric h3{
+font-size:32px;
+margin-bottom:8px;
+color:#d4af37;
+}
+
+.metric p{
+font-size:14px;
+margin:0;
+line-height:1.6;
 }
 
 section{
-max-width:1250px;
+max-width:1300px;
 margin:auto;
-padding:100px 22px;
+padding:110px 24px;
 }
 
 .section-title{
-font-size:42px;
+font-size:46px;
 margin-bottom:55px;
 font-weight:800;
-color:white;
 }
 
-.grid{
+.about-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:24px;
+grid-template-columns:1.2fr .8fr;
+gap:28px;
 }
 
-.card{
+.glass{
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
-border-radius:26px;
-padding:34px;
-backdrop-filter:blur(12px);
-transition:.3s;
+backdrop-filter:blur(14px);
+border-radius:30px;
+padding:38px;
 }
 
-.card:hover{
-transform:translateY(-6px);
-border-color:rgba(212,175,55,.4);
+.glass h3{
+font-size:26px;
+margin-bottom:18px;
+color:#f3d578;
 }
 
-.card h3{
-font-size:22px;
-margin-bottom:14px;
-color:#f4d67b;
+.glass p{
+line-height:1.9;
+color:#d4d4d4;
 }
 
-.card p,
-.card li{
-color:#d5d5d5;
-line-height:1.8;
+.expertise{
+display:flex;
+flex-wrap:wrap;
+gap:16px;
 }
 
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-}
-
-.skill{
-padding:24px;
-border-radius:22px;
+.expertise span{
+padding:14px 22px;
+border-radius:999px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
-transition:.3s;
 font-weight:600;
-color:#f5f5f5;
+transition:.3s;
 }
 
-.skill:hover{
-transform:translateY(-5px);
+.expertise span:hover{
 border-color:#d4af37;
+transform:translateY(-3px);
 }
 
 .timeline{
-display:grid;
-gap:24px;
+position:relative;
+margin-top:30px;
+padding-left:40px;
+}
+
+.timeline::before{
+content:'';
+position:absolute;
+left:8px;
+top:0;
+width:2px;
+height:100%;
+background:rgba(212,175,55,.5);
 }
 
 .timeline-item{
-background:rgba(255,255,255,.04);
-border-left:4px solid #d4af37;
+position:relative;
+margin-bottom:45px;
 padding:30px;
-border-radius:20px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:26px;
+}
+
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-42px;
+top:40px;
+width:18px;
+height:18px;
+background:#d4af37;
+border-radius:50%;
+box-shadow:0 0 20px rgba(212,175,55,.6);
 }
 
 .timeline-item h3{
-font-size:24px;
+font-size:28px;
 margin-bottom:8px;
 }
 
 .timeline-item .date{
 color:#d4af37;
-margin-bottom:16px;
 font-weight:600;
+margin-bottom:18px;
 }
 
 .timeline-item ul{
-padding-left:20px;
+padding-left:18px;
+color:#d8d8d8;
+line-height:1.9;
 }
 
-.timeline-item li{
-margin-bottom:10px;
-}
-
-.contact-box{
-text-align:center;
-padding:70px 30px;
+.project{
+display:grid;
+grid-template-columns:1fr 160px;
+gap:30px;
+align-items:center;
+padding:34px;
+border-radius:28px;
 background:rgba(255,255,255,.04);
 border:1px solid rgba(255,255,255,.08);
-border-radius:30px;
+margin-bottom:24px;
 }
 
-.contact-box h2{
-font-size:42px;
+.project-icon{
+width:130px;
+height:130px;
+border-radius:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:46px;
+background:rgba(212,175,55,.08);
+border:1px solid rgba(212,175,55,.18);
+margin:auto;
+}
+
+.project h3{
+font-size:28px;
+margin-bottom:14px;
+}
+
+.project p{
+line-height:1.9;
+color:#d4d4d4;
+}
+
+.certifications{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:22px;
+}
+
+.cert{
+padding:28px;
+border-radius:24px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.cert h4{
+margin-bottom:14px;
+color:#f3d578;
+font-size:20px;
+}
+
+.contact{
+text-align:center;
+padding:80px 30px;
+border-radius:36px;
+background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(255,255,255,.03));
+border:1px solid rgba(255,255,255,.08);
+}
+
+.contact h2{
+font-size:52px;
 margin-bottom:20px;
 }
 
-.contact-box p{
-max-width:750px;
+.contact p{
+max-width:760px;
 margin:auto;
 line-height:1.9;
-color:#d4d4d4;
-margin-bottom:35px;
+color:#d8d8d8;
+margin-bottom:36px;
 }
 
 footer{
 padding:50px 20px;
 text-align:center;
-color:#9f9f9f;
+color:#9c9c9c;
 border-top:1px solid rgba(255,255,255,.06);
 margin-top:80px;
 }
 
-@media(max-width:768px){
-
-.nav-links{
-display:none;
-}
+@media(max-width:1000px){
 
 .hero{
-padding-top:60px;
+grid-template-columns:1fr;
 text-align:center;
 }
 
@@ -350,12 +447,37 @@ text-align:center;
 justify-content:center;
 }
 
+.metrics{
+grid-template-columns:repeat(2,1fr);
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+@media(max-width:640px){
+
 .hero h1{
 font-size:64px;
 }
 
 .hero h2{
 font-size:22px;
+}
+
+.metrics{
+grid-template-columns:1fr;
+}
+
+.project{
+grid-template-columns:1fr;
+text-align:center;
 }
 
 }
@@ -366,30 +488,36 @@ font-size:22px;
 <body>
 
 <nav>
+
 <div class="nav-container">
 
 <div class="logo">
 RG
-<span>ACCOUNTING PROFESSIONAL</span>
+<span>EXECUTIVE FINANCE PORTFOLIO</span>
 </div>
 
 <div class="nav-links">
 <a href="#about">About</a>
-<a href="#skills">Skills</a>
+<a href="#expertise">Expertise</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
 
 </div>
+
 </nav>
 
 <section class="hero">
 
-<div>
+<div class="hero-image">
+<img src="formal.png" alt="Rogelio Galon">
+</div>
+
+<div class="hero-content">
 
 <div class="badge">
-Senior Fund Accountant • Luxembourg Accounting • International Finance
+Luxembourg Accounting • Fund Accounting • International Finance
 </div>
 
 <h1>
@@ -398,11 +526,11 @@ Rogelio<br>
 </h1>
 
 <h2>
-Accounting & Finance Professional
+Senior Finance & Accounting Professional
 </h2>
 
 <p>
-Experienced accountant with a strong background in Luxembourg and international accounting environments including fund accounting, financial reporting, reconciliations, audit support, and multi-entity operations. Recognized for reliability, accuracy, compliance, and operational excellence in deadline-driven environments.
+Experienced accounting professional with extensive exposure to Luxembourg and international accounting environments specializing in fund accounting, Lux GAAP reporting, reconciliations, audit coordination, VAT support, and multi-entity financial operations.
 </p>
 
 <div class="buttons">
@@ -417,10 +545,30 @@ LinkedIn Profile
 
 </div>
 
+<div class="metrics">
+
+<div class="metric">
+<h3>10+</h3>
+<p>Years Professional Experience</p>
 </div>
 
-<div class="hero-image">
-<img src="formal.png" alt="Rogelio Galon">
+<div class="metric">
+<h3>Lux</h3>
+<p>Luxembourg Accounting Environment</p>
+</div>
+
+<div class="metric">
+<h3>Multi</h3>
+<p>Entity Financial Operations</p>
+</div>
+
+<div class="metric">
+<h3>Intl</h3>
+<p>International Finance Exposure</p>
+</div>
+
+</div>
+
 </div>
 
 </section>
@@ -428,48 +576,37 @@ LinkedIn Profile
 <section id="about">
 
 <h2 class="section-title">
-About Me
+Executive Profile
 </h2>
 
-<div class="grid">
+<div class="about-grid">
 
-<div class="card">
+<div class="glass">
 
 <h3>Professional Summary</h3>
 
 <p>
-Experienced Accountant with extensive exposure to Luxembourg and international accounting environments, specializing in fund accounting, financial reporting, reconciliations, audit coordination, VAT support, and multi-entity operations. Adept at maintaining financial accuracy, ensuring compliance, and collaborating effectively with stakeholders and auditors.
+Experienced Accountant with a solid background in Luxembourg and international accounting environments including fund, insurance, and multi-entity structures. Demonstrated expertise in general ledger accounting, Lux GAAP reporting, month-end and quarter-end closing, reconciliations, audit support, and regulatory compliance.
+<br><br>
+Recognized for reliability, accuracy, financial discipline, and effective collaboration with auditors, tax advisors, and internal stakeholders within fast-paced and deadline-driven environments.
 </p>
 
 </div>
 
-<div class="card">
+<div class="glass">
 
-<h3>Education</h3>
-
-<p>
-Bachelor of Science in Commerce (Accounting)<br><br>
-De La Salle Araneta University
-</p>
-
-<br>
+<h3>Education & Certifications</h3>
 
 <p>
-Diploma in Computer & Internet Programming<br><br>
-EXPERT IT Education Center
-</p>
+• Bachelor of Science in Commerce (Accounting)<br><br>
 
-</div>
+• Diploma in Computer & Internet Programming<br><br>
 
-<div class="card">
+• EU AI Act – Fundamental of Laws on Artificial Intelligence<br><br>
 
-<h3>Certifications</h3>
+• ACCA F1 – F3 Equivalences<br><br>
 
-<p>
-• EU AI Act - Fundamentals of Laws on Artificial Intelligence<br><br>
-• Leadership & Social Entrepreneurship Training Program<br><br>
-• Certificate of Competence in Basic Accounting<br><br>
-• ACCA F1 – F3 Equivalences
+• Leadership & Social Entrepreneurship Training Program
 </p>
 
 </div>
@@ -478,26 +615,28 @@ EXPERT IT Education Center
 
 </section>
 
-<section id="skills">
+<section id="expertise">
 
 <h2 class="section-title">
-Core Competencies
+Core Expertise
 </h2>
 
-<div class="skills-grid">
+<div class="expertise">
 
-<div class="skill">Lux GAAP Accounting</div>
-<div class="skill">Financial Reporting</div>
-<div class="skill">Fund Accounting</div>
-<div class="skill">Audit Coordination</div>
-<div class="skill">VAT & Tax Support</div>
-<div class="skill">Accounts Payable & Receivable</div>
-<div class="skill">Balance Sheet Analysis</div>
-<div class="skill">Cash Flow Monitoring</div>
-<div class="skill">Reconciliations</div>
-<div class="skill">Advanced Excel</div>
-<div class="skill">Financial Documentation</div>
-<div class="skill">Multi-Entity Accounting</div>
+<span>Lux GAAP Reporting</span>
+<span>Fund Accounting</span>
+<span>Financial Reporting</span>
+<span>Audit Coordination</span>
+<span>VAT & Tax Support</span>
+<span>Accounts Payable & Receivable</span>
+<span>Balance Sheet Analysis</span>
+<span>Cash Flow Monitoring</span>
+<span>Reconciliations</span>
+<span>Trial Balances</span>
+<span>Advanced Excel</span>
+<span>Multi-Entity Accounting</span>
+<span>Financial Controls</span>
+<span>Documentation & Compliance</span>
 
 </div>
 
@@ -512,15 +651,19 @@ Professional Experience
 <div class="timeline">
 
 <div class="timeline-item">
-<h3>SALTGATE S.A. – Luxembourg</h3>
-<div class="date">2015 – 2026</div>
+
+<h3>Finance & Operation Administrator</h3>
+
+<div class="date">
+SALTGATE S.A. – Luxembourg | 2025 – 2026
+</div>
 
 <ul>
 <li>Managed full accounting cycles for multiple entities.</li>
-<li>Prepared financial reports, reconciliations, and statutory documentation.</li>
-<li>Supported audits, VAT compliance, and tax coordination.</li>
-<li>Oversaw month-end and quarter-end closings.</li>
-<li>Maintained strong accounting controls and operational accuracy.</li>
+<li>Maintained general ledger records and prepared trial balances.</li>
+<li>Handled accounts payable, receivable, and reconciliations.</li>
+<li>Supported statutory reporting, tax compliance, and audits.</li>
+<li>Provided operational and first-line IT support.</li>
 </ul>
 
 </div>
@@ -528,13 +671,32 @@ Professional Experience
 <div class="timeline-item">
 
 <h3>Senior Fund Accountant</h3>
-<div class="date">2022 – 2025</div>
+
+<div class="date">
+SALTGATE S.A. – Luxembourg | 2022 – 2025
+</div>
 
 <ul>
-<li>Handled Lux GAAP financial reporting and fund accounting operations.</li>
-<li>Managed journal entries, accruals, and reconciliations.</li>
+<li>Oversaw Lux GAAP financial reporting and fund accounting.</li>
+<li>Managed closings, journal entries, accruals, and reconciliations.</li>
 <li>Prepared financial statements and audit documentation.</li>
-<li>Supported process improvements and compliance initiatives.</li>
+<li>Coordinated with tax advisors and external auditors.</li>
+</ul>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Fund Accountant</h3>
+
+<div class="date">
+SALTGATE S.A. – Luxembourg | 2016 – 2022
+</div>
+
+<ul>
+<li>Handled end-to-end accounting operations for multiple entities.</li>
+<li>Performed cash flow monitoring and reconciliations.</li>
+<li>Supported reporting, tax filings, and audit processes.</li>
 </ul>
 
 </div>
@@ -542,12 +704,15 @@ Professional Experience
 <div class="timeline-item">
 
 <h3>IT Support & Computer Training</h3>
-<div class="date">2009 – 2016</div>
+
+<div class="date">
+Paris, France | 2009 – 2016
+</div>
 
 <ul>
-<li>Delivered IT support and computer training services.</li>
-<li>Maintained systems and improved user productivity.</li>
-<li>Provided technical troubleshooting and system maintenance.</li>
+<li>Delivered IT support and technical maintenance services.</li>
+<li>Provided one-on-one Microsoft Office and computer training.</li>
+<li>Improved system reliability and user productivity.</li>
 </ul>
 
 </div>
@@ -559,39 +724,98 @@ Professional Experience
 <section id="projects">
 
 <h2 class="section-title">
-Projects
+Featured Projects
 </h2>
 
-<div class="grid">
+<div class="project">
 
-<div class="card">
+<div>
 
-<h3>Client Management System</h3>
+<h3>
+Payment Tracking Tool
+</h3>
 
 <p>
-Designed and developed a client information management system that streamlined client data handling and improved operational efficiency.
+Designed a workflow visibility and payment-tracking solution that improved operational monitoring and reduced errors in accounts payable processes.
 </p>
 
 </div>
 
-<div class="card">
+<div class="project-icon">
+💳
+</div>
 
-<h3>Integrated Business Automation Solution</h3>
+</div>
+
+<div class="project">
+
+<div>
+
+<h3>
+Client Management System
+</h3>
 
 <p>
-Supported system analysis, design, programming, and testing using Visual Studio and SQL Server for centralized business operations.
+Designed and developed a client information management system that streamlined data handling and improved operational efficiency.
 </p>
 
 </div>
 
-<div class="card">
+<div class="project-icon">
+📊
+</div>
 
-<h3>Payment Tracking Tool</h3>
+</div>
+
+<div class="project">
+
+<div>
+
+<h3>
+Integrated Business Automation Solution
+</h3>
 
 <p>
-Designed a workflow visibility and payment tracking tool that improved operational monitoring and reduced accounts payable errors.
+Supported analysis, programming, testing, and business process automation using Visual Studio and SQL Server across Accounting, HR, Finance, and Claims operations.
 </p>
 
+</div>
+
+<div class="project-icon">
+⚙️
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+Certifications & Recognition
+</h2>
+
+<div class="certifications">
+
+<div class="cert">
+<h4>EU AI Act Certification</h4>
+<p>
+Fundamentals of Laws on Artificial Intelligence
+</p>
+</div>
+
+<div class="cert">
+<h4>ACCA Equivalences</h4>
+<p>
+F1 – F3 Accounting Foundations
+</p>
+</div>
+
+<div class="cert">
+<h4>Leadership Training</h4>
+<p>
+Leadership and Social Entrepreneurship Program – Paris, France
+</p>
 </div>
 
 </div>
@@ -600,14 +824,14 @@ Designed a workflow visibility and payment tracking tool that improved operation
 
 <section id="contact">
 
-<div class="contact-box">
+<div class="contact">
 
 <h2>
-Let’s Connect
+Open to International Opportunities
 </h2>
 
 <p>
-Open to international accounting, finance, and fund accounting opportunities. Available for Luxembourg and global finance environments.
+Available for accounting, finance, operational finance, and fund accounting opportunities across Luxembourg and international business environments.
 </p>
 
 <div class="buttons" style="justify-content:center;">
@@ -627,7 +851,7 @@ View LinkedIn
 </section>
 
 <footer>
-© 2026 Rogelio Galon • Accounting & Finance Portfolio
+© 2026 Rogelio Galon | Executive Finance Portfolio
 </footer>
 
 <!-- Cloudflare Web Analytics -->
